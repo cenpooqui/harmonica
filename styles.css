@@ -1,0 +1,80 @@
+:root {
+  --btn-height: 80px;
+  --font-num:    12px;
+  --font-name:   18px;
+  --font-detail: 12px;
+}
+
+/* リセット＆ボックス設定 */
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; }
+
+/* Flex レイアウトでヘッダー固定＋メインが伸びる */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #f5f5f5;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex: none;
+}
+
+/* グリッドで 2 列×自動行、高さいっぱいスクロール */
+main {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 4px;
+}
+
+/* ボタン共通 */
+.store-btn {
+  width: 100%;
+  height: var(--btn-height);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.store-btn[data-disabled="true"] {
+  opacity: 1;              /* 透過なし */
+  cursor: default;
+  border: 1px dashed #aaa; /* わかりやすく区別可能 */
+}
+
+.floor-label {
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+  padding: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 5;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/* テキストサイズ */
+.num    { font-size: var(--font-num);    }
+.name   { font-size: var(--font-name); font-weight: bold; }
+.detail { font-size: var(--font-detail); }
+
+/* 色指定 */
+.color-0 { background: #ffffff; color: #000000; }
+.color-1 { background: #e74c3c; color: #ffffff; }
+.color-2 { background: #8e44ad; color: #ffffff; }
+.color-3 { background: #3498db; color: #ffffff; }
+.color-4 { background: #95a5a6; color: #000000; }
+.color-5 { background: #2c3e50; color: #ffffff; }
