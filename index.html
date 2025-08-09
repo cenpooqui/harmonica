@@ -179,6 +179,7 @@ if (item.url) {
     }
 
     render(items);
+    container.scrollTop = container.scrollHeight;
     
     document.getElementById('btn-map').addEventListener('click', () =>
       window.open('https://maps.app.goo.gl/jCADG5ww7uj2dN7r8', '_blank')
@@ -202,6 +203,8 @@ if (item.url) {
           })).reverse();
 
       render(toggled);
+      container.scrollTop = container.scrollHeight;
+
       isFlipped = !isFlipped;
     });
     
