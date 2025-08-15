@@ -3,7 +3,6 @@
   --font-num:    12px;
   --font-name:   18px;
   --font-detail: 12px;
-  --font-header-btn: 14px;
 }
 
 /* リセット＆ボックス設定 */
@@ -27,11 +26,6 @@ header {
   z-index: 10;
   flex: none;
 }
-
-header button {
-  font-size: var(--font-header-btn);
-}
-
 
 /* グリッドで 2 列×自動行、高さいっぱいスクロール */
 main {
