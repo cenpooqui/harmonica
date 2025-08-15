@@ -15,51 +15,52 @@ body {
   flex-direction: column;
   font-family: sans-serif;
 }
-
+/* ヘッダーを縦積み（ボタン行 ⇢ ラベル行）にする */
 header {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;    /* 両行を左右いっぱいに */
   gap: 8px;
   padding: 8px;
   background: #f5f5f5;
   position: sticky;
   top: 0;
   z-index: 10;
-  flex: none;
 }
 
-/* header を縦積みレイアウトに */
-header {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;       /* ボタン行とラベル行の間隔 */
-  padding: 8px;
-  background: #f5f5f5;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-/* ボタン行だけを横並びに */
+/* ボタン行 */
 .button-row {
   display: flex;
   gap: 8px;
 }
 
-/* カテゴリラベル行 */
+/* ボタンを同じ高さ・幅に揃える */
+.button-row button {
+  flex: 1;                 /* 横幅を均等に */
+  height: 40px;            /* 固定高さ */
+  padding: 0 12px;         /* 水平方向の余白 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ラベル行 */
 .category-row {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
-  padding: 4px 0;
+  justify-content: center; /* 中央揃えでもよい */
+  margin-top: 4px;
 }
 
-/* ラベルの基本スタイル */
+/* ラベルの見た目 */
 .category-label {
   padding: 4px 12px;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: bold;
-  color: #fff;     /* 白文字固定 */
+  color: #fff;
 }
 
 
